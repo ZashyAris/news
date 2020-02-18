@@ -1,0 +1,28 @@
+{% macro displaySourceList(news_list) %}
+ <div class="row">
+     {% for news in news_list %}
+     <div class="card col-md-3">
+      <a href="/news/{{news.id}}" class = "btn btn-primary">
+                     {{ news.name}}
+                 </a>
+                 <br>
+         <div class="card-body">
+                
+                 <br>
+             <div class="card-body">
+                 <p>
+                     {{ news.description |truncate(100)}}
+                 </p>
+                 <br>
+                 <a href="/news/{{news.id}}" class="btn btn-default btn-sm">Go to site {{news.name}}</a>
+                
+             </div>
+         </div>
+     </div>
+     {% endfor %}
+ </div>
+ {% endmacro %}
+
+
+
+

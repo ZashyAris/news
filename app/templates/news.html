@@ -1,0 +1,25 @@
+
+{% extends 'base.html'%}
+{% block content%}
+<div class="Container">
+    <h2>Top News</h2>
+    {% fro article_row in article | batch(4)%}
+      <div class="row">
+        {% for article in article_row %}
+          <div class="col-md-3">
+            <div class="thumbnails">
+              <a href="{{article.url}}" target="_blank">
+                <img src="{{article.image}}" alt="{{article.title}}" class="image">
+              </a>
+              <div class="caption">
+                <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
+                <p>{{article.description | truncate(68)}}</p>
+                <a href="{{article.url}}" target="_blank"> Read More</a>
+              </div>
+            </div>
+          </div>
+         {%endfor %}
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}
