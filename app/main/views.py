@@ -24,7 +24,7 @@ def articles(id):
    
 #     # Getting popular News
 #     popular_News = get_news('popular')
-#     upcoming_news = get_movie
+#     upcoming_news = get_news
 
 # @main.route('/news/<int:news_id>')
 # def news(news_id):
